@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// Root view responsible for switching Splash -> Main
 struct AppView: View {
     @EnvironmentObject private var container: DIContainer
     @State private var showSplash = true
