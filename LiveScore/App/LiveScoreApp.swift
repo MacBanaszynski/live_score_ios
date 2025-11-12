@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LiveScoreApp: App {
+    @StateObject private var container = DIContainer()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppView()
+                .environmentObject(container)
         }
     }
 }
