@@ -20,11 +20,11 @@ struct DaySelectorButton: View {
     }
 
     private var minDate: Date {
-        calendar.date(byAdding: .day, value: -7, to: today) ?? today
+        AppConstants.DateSelector.minDate(from: today, calendar: calendar)
     }
 
     private var maxDate: Date {
-        calendar.date(byAdding: .day, value: 7, to: today) ?? today
+        AppConstants.DateSelector.maxDate(from: today, calendar: calendar)
     }
 
     private var isSelected: Bool {
@@ -77,3 +77,4 @@ struct DaySelectorButton: View {
         return df.string(from: date)
     }
 }
+

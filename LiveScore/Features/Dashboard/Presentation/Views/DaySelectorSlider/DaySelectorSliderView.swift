@@ -28,7 +28,7 @@ struct DaySelectorSliderView: View {
             ScrollViewReader { proxy in
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
-                        ForEach(-7...7, id: \.self) { offset in
+                        ForEach(AppConstants.DateSelector.offsetRange, id: \.self) { offset in
                             let date = offsetDate(from: today, by: offset)
                             
                             DaySelectorButton(
@@ -60,3 +60,4 @@ struct DaySelectorSliderView: View {
 #Preview {
     DaySelectorSliderView()
 }
+

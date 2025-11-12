@@ -11,8 +11,6 @@ struct DashboardView: View {
     var body: some View {
         VStack(spacing: 12) {
             DaySelectorSliderView()
-
-            // Placeholder for the rest of the dashboard segments
             Spacer()
             Text("Dashboard here")
                 .foregroundStyle(.secondary)
@@ -21,7 +19,7 @@ struct DashboardView: View {
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
                 NavigationLink {
-                    // TODO: Replace with your Search screen when it exists
+                    // TODO: Replace with Search screen
                     Text("Search screen placeholder")
                         .navigationTitle("Search")
                 } label: {
