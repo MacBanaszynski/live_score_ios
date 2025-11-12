@@ -19,7 +19,7 @@ struct DashboardView: View {
             Spacer()
         }
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 NavigationLink {
                     // TODO: Replace with your Search screen when it exists
                     Text("Search screen placeholder")
@@ -32,7 +32,15 @@ struct DashboardView: View {
         }
     }
 
-   
+    private var toolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS) || os(visionOS) || os(tvOS)
+        return .topBarTrailing
+        #elseif os(macOS) || os(watchOS)
+        return .automatic
+        #else
+        return .automatic
+        #endif
+    }
 }
 
 #Preview {
